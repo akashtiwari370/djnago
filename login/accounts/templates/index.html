@@ -1,0 +1,88 @@
+{% load static %}
+<html>
+<head>
+  <title>login register</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <style>
+    .heading{
+      text-align: center;
+      background-color: rgba(238, 13, 58, 0.836);
+      padding-top: 10px;;
+      color: rgba(31, 44, 224, 0.61);
+      padding-bottom: 20px;
+      border-radius: 90px;
+
+    }
+
+    .home{
+      text-align: center;
+      padding-top: 200px;
+      padding-bottom: 200px;
+      background-color: rgba(0, 255, 255, 0.267);
+      background-image: url("index.jpg");
+      margin-left: 80px;
+      margin-right: 80px;
+      border-radius: 80px;
+      
+    }
+    .reg{
+      background-color: rgba(230, 18, 134, 0.089);
+      padding-top: 20px;
+      border-radius: 90px;
+
+    }
+    .log{
+      background-color: rgba(235, 221, 233, 0.151);
+      padding-top: 20px;
+      border-radius: 90px;
+    }
+    .forg{
+      background-color: rgba(235, 221, 233, 0.151);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-radius: 90px;
+    }
+    .add{
+      text-align: center;
+      background-color: rgba(128, 128, 128, 0.24);
+      border-radius: 3px;
+    }
+    body{
+      background-color: purple;
+      background-image: url("index.jpg");
+    }
+    #bar{
+      color:red;
+    }
+
+     
+  </style>
+</head>
+<body background="{% static 'mysite/images/index.jpg' %}">
+  
+      {% block content%}
+         <div class="heading"><h1 >Welcome Home </h1></div>
+         
+        {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">Logout</a>
+       
+        {% else %}
+        <div class="home">
+          <div class="log"><a href="{% url 'login_url' %}">Login</a><br><br></div>
+          <div class="reg"><a href="{% url 'register_url' %}">Register</a><br><br></div>
+          <div class="forg"><a href="#">forgot password</a></div></div>
+        <div class="address"></div>
+
+
+
+        <div class="add"><a href="#">Contact Us</a>
+          <a href="#">Reach Us</a><br>
+          <p id="bar">Sai Hostel,Graphic Era University Dehradun</p>
+        </div>
+
+
+        {% endif %}
+
+      {% endblock %}	
+</body>
+</html>      

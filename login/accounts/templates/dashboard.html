@@ -1,0 +1,27 @@
+<style>
+.dash{
+    text-align: center;
+    color: plum;
+}
+#tab{
+    text-align: right;
+    background-color: seashell;
+    margin-left: 1500px;
+}
+.content{
+    color: rgb(253, 252, 253);
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+
+
+</style>
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="dash"><h1>Welcome, {{user.username}} </h1>   <p id="tab"><a href="{% url 'logout' %}">logout</a></p></div>
+    <div class="content"><b>Welcome to your dashboard from here you can manage all your data and work on your projects which ar yet to be included in the website. But till then you can just chek out all our features mentioned below.</b></div>
+
+{% endblock %}

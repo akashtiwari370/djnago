@@ -1,0 +1,31 @@
+<style>
+.abc{
+    color: rgb(19, 14, 29);
+    
+    background-color: rgba(11, 248, 31, 0.548);
+    margin-left: 20px;
+    margin-right: 50px;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+
+
+
+</style>
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="heading"><h1>Create New Account </h1></div><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="abc"><form method="POST">
+    	{% csrf_token %}
+
+         {{form.as_p}}
+    	
+    	<div class="but"><button>Register </button></div>
+    	
+    </form>
+</div>
+{% endblock %}
